@@ -1,0 +1,11 @@
+function spinalCase(str) {
+  // "It's such a fine line between stupid, and clever."
+  // --David St. Hubbins
+  return str.replace(/([A-Z])/g, ' $1') /*Find Cap and divide by sapce*/
+  .replace(/[^A-za-z0-9]/g,' ') /* find non alpha numeric values and replace with space*/
+  .replace(/[_\s]{1,}/g,"-") /* connver spaces and _ to - */
+  .replace(/^\-|[\-]$/g,'') /* Slice at the start and end */
+  .toLowerCase();
+}
+
+spinalCase('This Is Spinal Tap');
